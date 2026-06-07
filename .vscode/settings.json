@@ -1,7 +1,13 @@
 {
-  "// lean": "Config lives in .prettierrc.json / .eslintrc.json / tsconfig.json. Editor == CI.",
+  // lean: Config lives in .prettierrc.json / .eslintrc.json / tsconfig.json. Editor == CI.,
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#000",
+    "titleBar.inactiveForeground": "#000000CC",
+    "titleBar.activeBackground": "#00ffff",
+    "titleBar.inactiveBackground": "#58595B"
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "eslint.run": "onSave",
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

@@ -1,0 +1,23 @@
+/* Terminal aesthetic: dark, dense, legible. Refine in-repo with the
+   frontend-design skill. JetBrains Mono for numbers reads better under stress
+   than a proportional font. */
+:root {
+  --bg: #0a0e14;
+  --panel: #11161f;
+  --border: #1e2632;
+  --text: #c9d1d9;
+  --muted: #6b7785;
+  --green: #2ecc71;
+  --red: #e74c3c;
+  --amber: #f0a020;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.pos { color: var(--green); }
+.neg { color: var(--red); }

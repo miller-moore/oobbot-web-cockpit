@@ -1,0 +1,7 @@
+{
+  "// lean": "Config lives in .prettierrc.json / .eslintrc.json / tsconfig.json. Editor == CI.",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.run": "onSave",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

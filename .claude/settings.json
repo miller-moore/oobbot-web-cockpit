@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Bash(rm -rf*)",
+      "Bash(git push --force*)"
+    ],
+    "ask": [
+      "Bash(git push*)",
+      "Bash(npm install*)",
+      "Write(./.github/**)"
+    ],
+    "allow": [
+      "Bash(npm run*)",
+      "Bash(npx tsc*)",
+      "Bash(git status*)", "Bash(git diff*)", "Bash(git add*)",
+      "Bash(git commit*)", "Bash(git log*)", "Bash(git checkout -b*)",
+      "Read(./app/**)", "Read(./components/**)", "Read(./lib/**)",
+      "Write(./app/**)", "Write(./components/**)", "Write(./lib/**)",
+      "Edit(./app/**)", "Edit(./components/**)", "Edit(./lib/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      { "matcher": "Write|Edit",
+        "hooks": [ { "type": "command", "command": "bash .claude/hooks/no-client-secrets.sh" } ] }
+    ],
+    "PostToolUse": [
+      { "matcher": "Write|Edit",
+        "hooks": [ { "type": "command", "command": "npx prettier --write $CLAUDE_TOOL_FILE_PATH 2>/dev/null; true" } ] }
+    ]
+  }
+}
